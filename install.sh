@@ -126,16 +126,14 @@ update_shell_config() {
     
     # Check if profile is already sourced
     local source_line="source \"$INSTALL_DIR/source/index.sh\""
-    
-    if grep -q "profile" "$shell_config" 2>/dev/null; then
-        info "Profile already configured in $shell_config"
-    else
-        info "Adding profile to $shell_config"
-        echo "" >> "$shell_config"
-        echo "# Profile Configuration" >> "$shell_config"
-        echo "$source_line" >> "$shell_config"
-        success "Profile added to $shell_config"
+       
+    if [[ -f "$shell_config" ]]; then
+        info "Backing up existing $shell_config to ${shell_config}.backup.$(date +%Y%m%d_%H%M%S)"
+        cp "$shell_config" "${shell_config}.backup.$(date +%Y%m%d_%H%M%S)"
     fi
+    info "Writing new $shell_config with profile source line only"
+    echo "$source_line" > "$shell_config"
+    success "$shell_config replaced with profile source line."
 }
 
 set_git_hooks() {
