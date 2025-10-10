@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Shared utility functions for Gian Profile
+# Shared utility functions for Profile
 
 # Colors for output
 RED='\033[0;31m'

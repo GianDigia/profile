@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Gian Profile Configuration Installer
+# Profile Configuration Installer
 # Usage: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/GianDigia/profile/main/install.sh)"
 
 # Colors for output (needed before utils.sh is available)
@@ -70,7 +70,7 @@ backup_existing() {
 
 # Clone the repository
 clone_repository() {
-    info "Cloning Gian Profile repository..."
+    info "Cloning Profile repository..."
     
     # Create .config directory if it doesn't exist
     mkdir -p "$HOME/.config"
@@ -127,12 +127,12 @@ update_shell_config() {
     # Check if profile is already sourced
     local source_line="source \"$INSTALL_DIR/source/index.sh\""
     
-    if grep -q "gian-profile" "$shell_config" 2>/dev/null; then
+    if grep -q "profile" "$shell_config" 2>/dev/null; then
         info "Profile already configured in $shell_config"
     else
         info "Adding profile to $shell_config"
         echo "" >> "$shell_config"
-        echo "# Gian Profile Configuration" >> "$shell_config"
+        echo "# Profile Configuration" >> "$shell_config"
         echo "$source_line" >> "$shell_config"
         success "Profile added to $shell_config"
     fi
