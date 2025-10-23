@@ -3,6 +3,7 @@ DIR="$(dirname "${BASH_SOURCE[0]:-$0}")"
 
 alias cat=bat
 alias c=clear
+alias remove_nm="find . -type d -name node_modules -exec rm -rf {} +"
 
 # Update all installed tools and configurations
 alias update-all='echo "🔄 Updating all tools and configurations..." && \
