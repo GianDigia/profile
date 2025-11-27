@@ -56,3 +56,7 @@ fi
 if [ ! -d /opt/homebrew/Caskroom/visual-studio-code ]; then
     brew install --cask visual-studio-code
 fi
+
+if [ ! -d /opt/homebrew/Caskroom/orbstack ]; then
+    brew install --cask orbstack
+fi
