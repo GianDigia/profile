@@ -20,6 +20,11 @@ if ! command_exists mise; then
     brew install mise
 fi
 
+if ! brew list | grep libyaml; then
+    # Required for Ruby installation via mise (psych gem dependency)
+    brew install libyaml
+fi
+
 if ! command_exists eza; then
     brew install eza
 fi
