@@ -23,10 +23,10 @@ BACKUP_DIR="$HOME/.config/profile.backup.$(date +%Y%m%d_%H%M%S)"
 
 # Minimal functions needed before cloning
 command_exists() { command -v "$1" >/dev/null 2>&1; }
-info() { echo -e "\033[0;34m[INFO]\033[0m $1"; }
-success() { echo -e "\033[0;32m[SUCCESS]\033[0m $1"; }
-warning() { echo -e "\033[1;33m[WARNING]\033[0m $1"; }
-error() { echo -e "\033[0;31m[ERROR]\033[0m $1"; }
+info() { echo -e "\033[0;34m•\033[0m $1"; }
+success() { echo -e "\033[0;32m•\033[0m $1"; }
+warning() { echo -e "\033[1;33m•\033[0m $1"; }
+error() { echo -e "\033[0;31m•\033[0m $1"; }
 abort() { error "$1"; exit 1; } 
 
 # Check prerequisites
@@ -144,13 +144,6 @@ set_git_hooks() {
 
 # Main installation function
 main() {
-    echo -e "${GREEN}"
-    echo "╔══════════════════════════════════╗"
-    echo "║       Profile Configuration      ║"
-    echo "║           Installer              ║"
-    echo "╚══════════════════════════════════╝"
-    echo -e "${NC}"
-        
     check_prerequisites
     backup_existing
     clone_repository
@@ -159,7 +152,7 @@ main() {
     set_git_hooks
     
     echo ""
-    success "🎉 Installation completed successfully!"
+    success "Installation completed successfully"
     info "This profile is now installed at: $INSTALL_DIR"
     
     if [[ -d "$BACKUP_DIR" ]]; then

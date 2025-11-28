@@ -20,19 +20,19 @@ print() {
 
 # Logging functions
 info() {
-    print "${BLUE}[INFO]${NC} $1"
+    print "${BLUE}•${NC} $1"
 }
 
 success() {
-    print "${GREEN}[SUCCESS]${NC} $1"
+    print "${GREEN}•${NC} $1"
 }
 
 warning() {
-    print "${YELLOW}[WARNING]${NC} $1"
+    print "${YELLOW}•${NC} $1"
 }
 
 error() {
-    print "${RED}[ERROR]${NC} $1"
+    print "${RED}•${NC} $1"
 }
 
 abort() {

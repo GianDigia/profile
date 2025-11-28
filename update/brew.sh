@@ -20,7 +20,7 @@ if ! command_exists mise; then
     brew install mise
 fi
 
-if ! brew list | grep libyaml; then
+if ! brew list | grep -q libyaml; then
     # Required for Ruby installation via mise (psych gem dependency)
     brew install libyaml
 fi
