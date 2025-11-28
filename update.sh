@@ -1,8 +1,8 @@
 #!/bin/bash
 set_git_hooks() {
-    if [ "$(git config --get core.hooksPath)" != "$INSTALL_DIR/hooks" ]; then
+    if [ "$(git config --get core.hooksPath)" != "hooks" ]; then
         info "Setting up Git hooks..."
-        git config core.hooksPath "$INSTALL_DIR/hooks"
+        git config core.hooksPath "hooks"
         success "Git hooks configured successfully"
     fi
 }
