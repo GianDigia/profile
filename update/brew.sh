@@ -49,6 +49,10 @@ if ! command_exists zoxide; then
     brew install zoxide
 fi
 
+if ! command_exists tmux; then
+    brew install tmux
+fi
+
 if [ ! -d /opt/homebrew/Caskroom/iterm2 ]; then
     brew install --cask iterm2
 fi
